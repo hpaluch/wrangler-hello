@@ -14,9 +14,9 @@ Wrangler installation instructions
 are on its [GitHub's project page][Wrangler - GitHub project]
 Project homepage is on: https://github.com/cloudflare/wrangler
 
-NOTE: Wrangler itself is written in [][Mozilla Rust] therefore
-`cargo` is preferred option (`npm` version just installs binary
-- which may be more convenient).
+NOTE: Wrangler itself is written in [Mozilla Rust] therefore
+`cargo` is preferred option (`npm` version just installs
+binary - which may be more convenient).
 
 To install cargo and dependencies issue:
 ```bash
@@ -71,9 +71,9 @@ Where:
 Now copy `wrangler-example.toml` to `wrangler.toml` and edit
 your `wrangler.toml` - at least:
 * `name` - will be domain prefix of your app, I use `hello`
-* `zone_id` and `account_id` - go to Dahboard on your domain
+* `zone_id` and `account_id` - go to Dashboard on your domain
   and see `Zone ID` and `Account ID` in the right column.
-* replace `henryx.info` with your domain hsoted in CloudFlare
+* replace `henryx.info` with your domain hosted in CloudFlare
 
 NOTE: the `route` parameter is used only when publishing to domain
 (seems to be ignored in `preview` stage)
