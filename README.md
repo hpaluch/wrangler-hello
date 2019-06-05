@@ -19,10 +19,21 @@ binary - which may be more convenient).
 
 To install cargo and dependencies issue:
 ```bash
-sudo apt-get install cargo libssl-dev nodejs npm
-# around 103MB to download, 300MB of disk space required
+sudo apt-get install build-essential cargo libssl-dev nodejs npm
 ```
+
+WARNING! If you get strange error like:
+```
+npm : Depends: node-gyp (>= 0.X.X) but it is not going to be installed
+```
+
+Try different libssl (openssl) version, in my case worked:
+```bash
+sudo apt-get install build-essential cargo libssl1.0-dev nodejs npm
+```
+
 Additional packages are there:
+* `build-essential` - packages to build native binaries (gcc etc.)
 * `libssl-dev`  - required to build `wrangler`
 * `nodejs` and `npm` required for our JavaScript worker
   (for `wrangler build` command)
