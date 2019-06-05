@@ -12,7 +12,6 @@ Generally we will follow: [CloudFlare Workers Quick-Start]
 
 Wrangler installation instructions
 are on its [GitHub's project page][Wrangler - GitHub project]
-Project homepage is on: https://github.com/cloudflare/wrangler
 
 NOTE: Wrangler itself is written in [Mozilla Rust] therefore
 `cargo` is preferred option (`npm` version just installs
