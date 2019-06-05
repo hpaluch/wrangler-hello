@@ -186,6 +186,8 @@ Or using:
 curl -D - https://hello.henryx.info/test
 ```
 
+To see page fetched from origin, try: https://hello.henryx.info/robots.txt
+
 That's all...
 
 [Mozilla Rust]: https://research.mozilla.org/rust/
