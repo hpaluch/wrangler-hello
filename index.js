@@ -29,7 +29,7 @@ async function handleRequest(request) {
   r.get('.*/bar', () => new Response('responding for /bar'))
   r.get('.*/foo', req => handler(req))
   r.post('.*/foo.*', req => handler(req))
-  r.get('/demos/router/foo', req => fetch(req)) // return the response from the origin
+  r.get('/robots.txt', req => fetch(req)) // return the response from the origin
 
   const resp = await r.route(request)
   return resp
