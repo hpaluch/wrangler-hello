@@ -1,5 +1,7 @@
 # locally installed node packages
 node_modules/*
+# wrangler build
+worker/*
 
 # vim backup files
 *~
