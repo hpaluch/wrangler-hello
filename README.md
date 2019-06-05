@@ -68,11 +68,16 @@ Where:
 * `<global_api_key>` is your `Global API Key` - go to your
    Profile Page and click on `View` of `API Keys` -> `Global API Key`
 
-Now edit wrangler.toml - at least:
+Now copy `wrangler-example.toml` to `wrangler.toml` and edit
+your `wrangler.toml` - at least:
 * `name` - will be domain prefix of your app, I use `hello`
 * `zone_id` and `account_id` - go to Dahboard on your domain
   and see `Zone ID` and `Account ID` in the right column.
-* `route` you can leave empty so far... (it's missing in docs?)
+* replace `henryx.info` with your domain hsoted in CloudFlare
+
+NOTE: the `route` parameter is used only when publishing to domain
+(seems to be ignored in `preview` stage)
+
 
 Now you need to invoke
 ```bash
@@ -131,10 +136,13 @@ wrangler publish --release
 
 And voila! You can see my example
 at: https://hello.henryx.info/test
- 
+
+Or using:
+```bash
+curl -D - https://hello.henryx.info/test
+```
 
 That's all...
-
 
 [Mozilla Rust]: https://research.mozilla.org/rust/
 [Wrangler - GitHub project]: https://github.com/cloudflare/wrangler

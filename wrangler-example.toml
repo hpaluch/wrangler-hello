@@ -1,0 +1,8 @@
+name = "hello"
+type = "webpack"
+zone_id = "YOUR_CLOUDFLARE_ZONE_ID_HERE"
+private = false
+account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID_HERE"
+# replace "henryx.info" with your domain hosted in CloudFlare
+route = "hello.henryx.info/*"
+
