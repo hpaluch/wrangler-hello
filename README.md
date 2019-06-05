@@ -70,14 +70,14 @@ Where:
 
 Now copy `wrangler-example.toml` to `wrangler.toml` and edit
 your `wrangler.toml` - at least:
-* `name` - will be domain prefix of your app, I use `hello`
+* `name` - will be app prefix for your `sub-domain.workers.dev`.
+  For `hello` it will be `hello.sub-domain.workers.dev`
 * `zone_id` and `account_id` - go to Dashboard on your domain
   and see `Zone ID` and `Account ID` in the right column.
 * replace `henryx.info` with your domain hosted in CloudFlare
 
-NOTE: the `route` parameter is used only when publishing to domain
-(seems to be ignored in `preview` stage)
-
+NOTE: the `route` parameter is used only when publishing to custom domain
+(seems to be ignored in `preview` stage and/or `workers.dev`)
 
 Now you need to invoke
 ```bash
@@ -113,6 +113,30 @@ and press ENTER or click on `Go` to see results like:
 }
 ```
 
+## Publishing App to CloudFlare's workers.dev domain
+
+Publishing application to CloudFlares `workers.dev`:
+* you need to register you sub-domain - goto CloudFlare
+  Dashbaord. Click on Workers and confirm creating sub-domain.
+* in my case I have sub-domain `henryx.workers.dev`
+
+Now you can publish your app to `workers.dev` using:
+```
+wrangler publish
+
+ Installing wasm-pack...
+ Installing wranglerjs...
+ Built successfully.
+ Successfully published your script.
+ Successfully made your script available at hello.henryx.workers.dev
+ Success! Your worker was successfully published. ✨
+```
+
+And you can test it. In my case using: https://hello.henryx.workers.dev/test
+
+
+## Publishing App to your custom domain
+
 Now you need to have some domain on which your app will be visible.
 * go to CloudFlare dashboard
 * click on `DNS`
@@ -133,6 +157,16 @@ you app on your domain:
 wrangler build
 wrangler publish --release
 ```
+
+> IMPORTANT!
+>
+> Please mind the differences between these two commands:
+>
+> * `wrangler publish` will publish your worker
+>   under `your-sub-domain.workers.dev` - this domain
+>   is maintained by CloudFlare
+> * `wrangler publish --release` will publish your app
+>   on any your own domain hosted in CloudFlare DNS.
 
 And voila! You can see my example
 at: https://hello.henryx.info/test
