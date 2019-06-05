@@ -19,7 +19,7 @@ binary - which may be more convenient).
 
 To install cargo and dependencies issue:
 ```bash
-sudo apt-get install build-essential cargo libssl-dev nodejs npm
+sudo apt-get install build-essential cargo libssl-dev nodejs npm pkg-config
 ```
 
 WARNING! If you get strange error like:
@@ -29,7 +29,7 @@ npm : Depends: node-gyp (>= 0.X.X) but it is not going to be installed
 
 Try different libssl (openssl) version, in my case worked:
 ```bash
-sudo apt-get install build-essential cargo libssl1.0-dev nodejs npm
+sudo apt-get install build-essential cargo libssl1.0-dev nodejs npm pkg-config
 ```
 
 Additional packages are there:
@@ -49,13 +49,13 @@ warning: be sure to add `/home/LOGIN/.cargo/bin` to your PATH to be able
          to run the installed binaries
 ```
 
-So I added to my `~/.bash_profile`:
+So I added at the end of my `~/.profile`:
 ```bash
-export PATH=~/.cargo/bin:$PATH
+PATH=~/.cargo/bin:$PATH
 ```
 and updated path using:
 ```bash
-source ~/.bash_profile
+source ~/.profile
 ```
 
 Now just try:
